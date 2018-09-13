@@ -6,10 +6,10 @@ import renderCoordinates from './components/renderCoordinates';
 import SimpleButton from '@budarin/simple-button';
 import SimpleText from '@budarin/simple-text';
 
-const css = process.env.__BROWSER__ ? appStyles.locals : appStyles;
+const css = __BROWSER__ ? appStyles.locals : appStyles;
 class App extends React.Component {
     render() {
-        if (process.env.__BROWSER__) {
+        if (__BROWSER__) {
             appStyles.use();
         }
 

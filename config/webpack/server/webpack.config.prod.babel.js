@@ -94,9 +94,11 @@ const config = {
             { from: './src/common/android-chrome-512x512.png' },
         ]),
         new webpack.DefinePlugin({
-            'process.env.__DEV__': false,
-            'process.env.__PROD__': true,
-            'process.env.__SERVER__': true,
+            __DEV__: false,
+            __PROD__: true,
+            __SERVER__: true,
+            __BROWSER__: false,
+            'process.env.__SERVER__': true, // for components
             'process.env.__BROWSER__': false,
         }),
         new webpack.WatchIgnorePlugin([/css\.d\.ts$/]), // due to slow building ignore changes

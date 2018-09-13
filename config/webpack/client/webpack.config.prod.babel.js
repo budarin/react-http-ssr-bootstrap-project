@@ -88,9 +88,11 @@ const config = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.__DEV__': false,
-            'process.env.__PROD__': true,
-            'process.env.__BROWSER__': true,
+            __DEV__: false,
+            __PROD__: true,
+            __BROWSER__: true,
+            __SERVER__: false,
+            'process.env.__BROWSER__': true, // for components
             'process.env.__SERVER__': false,
         }),
         new webpack.WatchIgnorePlugin([/css\.d\.ts$/]),

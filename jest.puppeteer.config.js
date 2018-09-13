@@ -21,9 +21,11 @@ module.exports = {
     notify: true,
     notifyMode: 'failure',
     globals: {
-        'process.env.__DEV__': true,
-        'process.env.__PROD__': false,
-        'process.env.__BROWSER__': false,
+        __DEV__: true,
+        __PROD__: false,
+        __BROWSER__: false,
+        __SERVER__: false,
+        'process.env.__BROWSER__': false, // for components
         'process.env.__SERVER__': false,
     },
 };
