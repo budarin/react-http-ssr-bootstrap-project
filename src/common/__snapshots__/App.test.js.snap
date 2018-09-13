@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page test renders correctly 1`] = `
+Array [
+  <span
+    className="hello"
+  >
+    Hello World!
+  </span>,
+  <div>
+    <span>
+      Mouse coordinates:
+    </span>
+    <br />
+    <span>
+      x = 
+      ?
+    </span>
+    <span>
+         
+    </span>
+    <span>
+      y = 
+      ?
+    </span>
+  </div>,
+  <br />,
+  <button
+    className="btn"
+  >
+    <span
+      style={
+        Object {
+          "fontStyle": "italic",
+        }
+      }
+    >
+      Кнопка!
+    </span>
+  </button>,
+  <br />,
+  <span
+    style={
+      Object {
+        "fontStyle": "italic",
+      }
+    }
+  >
+    Text
+  </span>,
+]
+`;

@@ -1,0 +1,116 @@
+[
+    {
+        "name": "type-check",
+        "command": "tsc"
+    },
+    {
+        "name": "start-client",
+        "command": "webpack-dev-server -r config/webpack/client/register-ts.js --config config/webpack/client/webpack.config.babel.js",
+        "env": {
+            "NODE_ENV": "development",
+            "DEBUG": "app:*"
+        }
+    },
+    {
+        "name": "server-compile",
+        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/webpack.config.babel.js",
+        "env": {
+            "NODE_ENV": "development"
+        }
+    },
+    {
+        "name": "server-monitoring",
+        "command": "nodemon -w dist/server.js dist/server.js",
+        "env": {
+            "NODE_ENV": "development"
+        }
+    },
+    {
+        "name": "ensureServerJsIsCreated",
+        "command": "node ./tools/ensureServerJsIsCreated.js"
+    },
+    {
+        "name": "start-server",
+        "command": "prun ensureServerJsIsCreated && concurrently --kill-others \"prun server-compile\" \"prun server-monitoring\"",
+        "env": {
+            "NODE_ENV": "development",
+            "DEBUG": "app:*"
+        }
+    },
+    {
+        "name": "server-build",
+        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/webpack.config.prod.babel.js",
+        "env": {
+            "NODE_ENV": "production"
+        }
+    },
+    {
+        "name": "client-build",
+        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/client/webpack.config.prod.babel.js",
+        "env": {
+            "NODE_ENV": "production"
+        }
+    },
+    {
+        "name": "clean",
+        "command": "rimraf ./.tmp && rimraf ./dist"
+    },
+    {
+        "name": "build",
+        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/webpack.config.prod.babel.js",
+        "env": {
+            "NODE_ENV": "production"
+        }
+    },
+    {
+        "name": "upgrade",
+        "command": "npm-upgrade && npm install"
+    },
+    {
+        "name": "start-all",
+        "command": "concurrently --kill-others  \"prun start-client\" \"prun start-server\"",
+        "env": {
+            "NODE_ENV": "development"
+        }
+    },
+    {
+        "name": "test",
+        "command": "jest --detectOpenHandles --no-cache  --forceExit ",
+        "env": {
+            "NODE_ENV": "test"
+        }
+    },
+    {
+        "name": "test-watch",
+        "command": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
+        "env": {
+            "NODE_ENV": "test",
+            "JEST_HIDE_USAGE": true
+        }
+    },
+    {
+        "name": "test-puppeteer",
+        "command": "jest --detectOpenHandles --no-cache  --forceExit  --config ./jest.puppeteer.config.js",
+        "env": {
+            "NODE_ENV": "test",
+            "SHOW_BROWSER": false
+        }
+    },
+    {
+        "name": "test-puppeteer-watch",
+        "command": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure --config ./jest.puppeteer.config.js",
+        "env": {
+            "NODE_ENV": "test",
+            "SHOW_BROWSER": false,
+            "JEST_HIDE_USAGE": true
+        }
+    },
+    {
+        "name": "server:prod",
+        "command": "prun clean && npm run build && cd ./dist && node ./server",
+        "env": {
+            "NODE_ENV": "production",
+            "DEBUG": "app:*"
+        }
+    }
+]

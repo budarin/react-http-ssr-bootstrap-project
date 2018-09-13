@@ -1,0 +1,4 @@
+-   генерация отдельного source.map
+-   вынести прод в отдельную папку и посмотреть какие зависимости нужны - поправить package.json
+-   генерировать типы для css
+-   check new version of webpack-serve to work properly
