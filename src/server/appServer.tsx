@@ -18,11 +18,12 @@ const app = async (req: ServerRequest, res: ServerResponse) => {
         return renderApp(req, res);
     }
 
-    if (__DEV__) {
-        // handle static files for non pushed assets
-        // nginx will do it in production
-        sendStaticFile(req, res);
-    }
+    // in prod behind nginx
+    // if (__DEV__) {
+    // handle static files for non pushed assets
+    // nginx will do it in production
+    sendStaticFile(req, res);
+    // }
 };
 
 export default app;
