@@ -1,9 +1,7 @@
-import branch from 'git-branch';
 import env from '../../utils/getEnv';
 import disableDevToolsInProduction from '../../utils/disableDevToolsInProduction';
 import * as packageJson from '../../../package.json';
 
-const branchName = branch.sync();
 const version = (packageJson as any).version;
 
 const reactDevModules =
@@ -22,7 +20,6 @@ function renderHTMLHeader(): string {
         <head>
             <meta charset="UTF-8">
             <meta name="version" content="${version}">
-            <meta name="branch" content="${branchName}">
             <meta name="theme-color" content="#E6492F">
             <title>React SSR project</title>
             <meta name="Description" content="Simple SSR React project.">
