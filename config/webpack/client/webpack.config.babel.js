@@ -7,8 +7,6 @@ import babelConfig from './babelLoaderConfig';
 
 const { STATIC_HOST, STATIC_PORT, STATIC_URL } = env;
 
-console.log('cur dir', __dirname);
-
 const config = {
     cache: true,
     target: 'web',
