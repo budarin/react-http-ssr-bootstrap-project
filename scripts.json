@@ -57,7 +57,7 @@
     },
     {
         "name": "build",
-        "command": "npm run clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/webpack.config.prod.babel.js",
+        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/webpack.config.prod.babel.js",
         "env": {
             "NODE_ENV": "production"
         }

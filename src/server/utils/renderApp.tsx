@@ -9,7 +9,9 @@ import renderHTMLBottom from './renderHTMLBottom';
 import renderRemoveSplashScript from './renderRemoveSplashSript';
 
 const log = debug('app:server');
-const headers = { 'content-type': 'text/html; charset=utf-8' };
+const headers = {
+    'Content-Type': 'text/html; charset=utf-8',
+};
 
 // @ts-ignore
 async function renderApp(req: ServerRequest, res: ServerResponse): Promise<any> {
