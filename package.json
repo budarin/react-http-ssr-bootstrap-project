@@ -71,6 +71,7 @@
         "concurrently": "^4.0.1",
         "copy-webpack-plugin": "^4.5.2",
         "css-loader": "^1.0.0",
+        "debug": "^4.0.1",
         "fake-style-loader": "^1.0.1",
         "hard-source-webpack-plugin": "^0.12.0",
         "identity-obj-proxy": "^3.0.0",
@@ -78,6 +79,7 @@
         "jest": "^23.6.0",
         "jest-environment-node": "^23.4.0",
         "jest-puppeteer": "^3.3.1",
+        "mime-types": "^2.1.20",
         "nodemon": "^1.18.4",
         "optimize-js-plugin": "0.0.4",
         "postcss": "^7.0.2",
@@ -109,8 +111,5 @@
         "webpack-dev-server": "^3.1.8",
         "webpack-node-externals": "^1.7.2"
     },
-    "dependencies": {
-        "debug": "^4.0.1",
-        "mime-types": "^2.1.20"
-    }
+    "dependencies": {}
 }
