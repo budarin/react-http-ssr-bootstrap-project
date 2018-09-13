@@ -1,12 +1,8 @@
 export const legalAssets =
     process.env.NODE_ENV === 'development'
         ? [
-              '/client.js.map',
-              '/server.js.map',
-
               '/ress.min.css',
               '/default.css',
-              '/client.js',
               '/robots.txt',
               '/favicon.ico',
               '/manifest.json',

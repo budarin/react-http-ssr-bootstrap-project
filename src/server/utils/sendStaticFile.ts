@@ -8,6 +8,7 @@ import isLegalAsset from './isLegalAsset';
 import serverRootPath from './serverRootPath';
 
 const log = debug('app:server');
+const logError = debug('app:server:error');
 
 function sendStaticFile(req: ServerRequest, res: ServerResponse): void {
     const { url = '' } = req;
@@ -21,13 +22,19 @@ function sendStaticFile(req: ServerRequest, res: ServerResponse): void {
         return;
     }
 
-    log('>> Static file:', req.url);
+    fs.exists(filePath, exists => {
+        if (exists) {
+            log('>> Static file:', req.url);
 
-    res.writeHead(200, {
-        'content-type': mime.lookup(url) || '',
+            res.writeHead(200, {
+                'content-type': mime.lookup(url) || '',
+            });
+
+            fs.createReadStream(filePath).pipe(res);
+        } else {
+            logError('>> Static file is absent:', req.url);
+        }
     });
-
-    fs.createReadStream(filePath).pipe(res);
 }
 
 export default sendStaticFile;
