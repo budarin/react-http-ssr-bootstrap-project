@@ -79,7 +79,7 @@ const config = {
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
-        modules: ['node_modules', path.resolve('./src')],
+        modules: ['node_modules', 'src'],
     },
     plugins: [
         new CopyWebpackPlugin([
