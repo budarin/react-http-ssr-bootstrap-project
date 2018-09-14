@@ -58,8 +58,8 @@ const config = {
                     {
                         loader: 'typings-for-css-modules-loader',
                         options: {
-                            modules: true,
                             namedExport: false,
+                            modules: true,
                             importLoaders: 1,
                             localIdentName: '[name].[local]_[hash:7]',
                         },

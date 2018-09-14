@@ -1,8 +1,12 @@
-export interface IAppCss {
-    hello: string;
+declare interface ILocals {
+    readonly hello: string;
 }
-export const hello: string;
+declare interface IAppCss {
+    readonly hello: string;
+    readonly locals: ILocals;
+    readonly use: Function;
+    readonly unuse: Function;
+}
+declare const styles: IAppCss;
 
-export const locals: IAppCss;
-export const use: Function;
-export const unuse: Function;
+export default styles;
