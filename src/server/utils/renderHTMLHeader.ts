@@ -1,6 +1,7 @@
 import env from '../../utils/getEnv';
+import packageJson from '../../../package.json';
+import getPreLoadingLink from './getPreLoadingLink';
 import disableDevToolsInProduction from '../../utils/disableDevToolsInProduction';
-import * as packageJson from '../../../package.json';
 
 const version = (packageJson as any).version;
 
@@ -26,10 +27,16 @@ function renderHTMLHeader(): string {
             <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width, Downlink">
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes,shrink-to-fit=no">
             <link rel="manifest" href="/manifest.json">
+
+            ${getPreLoadingLink(`${env.STATIC_URL}client.js`)}
+            ${getPreLoadingLink('/ress.min.css')}
+            ${getPreLoadingLink('/default.css')}
             
             <link rel="stylesheet" type="text/css" href="/ress.min.css" />
             <link rel="stylesheet" type="text/css" href="/default.css" />
+
             ${disableDevToolsInProduction}
+            
             ${reactDevModules}
             <script src="${env.STATIC_URL}client.js" defer></script>
         </head>
