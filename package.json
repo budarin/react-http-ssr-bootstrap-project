@@ -16,6 +16,7 @@
         "test-puppeteer-watch": "prun test-puppeteer-watch",
         "upgrade": "prun upgrade",
         "type-check": "prun type-check",
+        "clean": "prun clean",
         "precommit": "lint-staged"
     },
     "browserslist": "> 3%, not ie < 13, not dead",
