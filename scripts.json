@@ -107,7 +107,7 @@
     },
     {
         "name": "server:prod",
-        "command": "npm run build && cd ./dist && node ./server",
+        "command": "tsc && npm run build && cd ./dist && node ./server",
         "env": {
             "NODE_ENV": "production",
             "DEBUG": "app:*"
