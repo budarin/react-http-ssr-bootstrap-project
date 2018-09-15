@@ -1,7 +1,5 @@
 .hello {
-    display: block;
     color: rgb(2, 83, 245);
-
     @mixin size 150px;
     @mixin clearfix;
 }
