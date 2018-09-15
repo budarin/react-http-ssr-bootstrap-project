@@ -38,7 +38,7 @@ const config = {
                 include: path.resolve('./src'),
                 exclude: path.resolve('node_modules'),
                 use: {
-                    loader: 'image-size-loader',
+                    loader: 'image-size',
                     options: {
                         digest: 'hex',
                         hash: 'sha512',
@@ -55,19 +55,12 @@ const config = {
                         loader: 'fake-style-loader',
                     },
                     {
-                        loader: 'typings-for-css-modules-loader',
+                        loader: 'css-loader',
                         options: {
-                            namedExport: false,
                             modules: true,
                             importLoaders: 1,
                             localIdentName: '[hash:base64:8]',
                             sourceMap: true,
-                            // cssnano options
-                            minimize: {
-                                // safe: true,
-                                zindex: false,
-                                discardComments: { removeAll: true },
-                            },
                         },
                     },
                     {
