@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = {
+const config = {
     plugins: [
         require('postcss-mixins')({
             mixinsDir: path.resolve('src/common/mixins'),
@@ -16,3 +16,13 @@ module.exports = {
         }),
     ],
 };
+
+if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(
+        require('cssnano')({
+            preset: 'default',
+        }),
+    );
+}
+
+module.exports = config;
