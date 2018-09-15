@@ -1,6 +1,2 @@
 -   сделать свой лоадер на основе typings-for-css-modules-loader
--   почему для скрипта на проде нужен git??
 -   генерация отдельного source.map
--   вынести прод в отдельную папку и посмотреть какие зависимости нужны - поправить package.json
--   генерировать типы для css
--   check new version of webpack-serve to work properly
