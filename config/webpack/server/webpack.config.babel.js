@@ -2,7 +2,6 @@ import path from 'path';
 import webpack from 'webpack';
 import babelConfig from './babelLoaderConfig';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
 import env from '../../../src/utils/getEnv';
 
 const { STATIC_URL } = env;
