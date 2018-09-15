@@ -7,6 +7,7 @@ declare interface IAppCss {
     readonly use: Function;
     readonly unuse: Function;
 }
+
 declare const styles: IAppCss;
 
 export default styles;
