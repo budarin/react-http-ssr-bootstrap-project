@@ -55,9 +55,12 @@ const config = {
                         loader: 'fake-style-loader',
                     },
                     {
-                        loader: 'css-loader',
+                        loader: '@budarin/ts-css-loader',
                         options: {
                             modules: true,
+                            usable: true,
+                            server: true,
+                            camelCase: true,
                             importLoaders: 1,
                             localIdentName: '[hash:base64:8]',
                             sourceMap: true,

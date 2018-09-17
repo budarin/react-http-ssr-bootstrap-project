@@ -1,11 +1,13 @@
 declare interface ILocals {
-    readonly hello: string;
+  readonly 'hello': string;
 }
-declare interface IAppCss {
-    readonly hello: string;
-    readonly locals: ILocals;
-    readonly use: Function;
-    readonly unuse: Function;
+
+export interface IAppCss {
+  readonly locals: ILocals;
+  readonly use: Function;
+  readonly unuse: Function;
+  readonly source: string;
+  readonly 'hello': string;
 }
 
 declare const styles: IAppCss;
