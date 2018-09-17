@@ -54,7 +54,7 @@
         "@babel/runtime": "^7.0.0",
         "@budarin/simple-button": "^1.1.15",
         "@budarin/simple-text": "^1.1.7",
-        "@budarin/ts-css-loader": "^1.0.16",
+        "@budarin/ts-css-loader": "^1.0.17",
         "@types/debug": "0.0.30",
         "@types/mime-types": "^2.1.0",
         "@types/node": "^10.10.1",
