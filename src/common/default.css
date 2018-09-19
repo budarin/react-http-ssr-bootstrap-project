@@ -3,7 +3,6 @@
 */
 
 html {
-    box-sizing: border-box;
     height: 100%;
     color: brown;
     font-size: 20px;
@@ -13,7 +12,6 @@ html {
     overflow-y: auto;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
-    touch-action: manipulation;
 }
 
 body {
