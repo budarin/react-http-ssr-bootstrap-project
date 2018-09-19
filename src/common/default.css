@@ -1,8 +1,9 @@
-* {
-    box-sizing: border-box;
-}
+/*
+* Default.css
+*/
 
 html {
+    box-sizing: border-box;
     height: 100%;
     color: brown;
     font-size: 20px;

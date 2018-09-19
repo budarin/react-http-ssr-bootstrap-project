@@ -79,11 +79,9 @@ const config = {
     },
     plugins: [
         new CopyWebpackPlugin([
-            { from: './node_modules/ress/dist/ress.min.css' },
             { from: './.env.production.json' },
 
             { from: './src/common/robots.txt' },
-            { from: './src/common/default.css' },
             { from: './src/common/manifest.json' },
             { from: './src/common/favicon.ico' },
             { from: './src/common/android-chrome-192x192.png' },
