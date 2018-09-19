@@ -3,6 +3,7 @@ module.exports = {
     name: 'unit-tests',
     displayName: 'unit-tests',
     cacheDirectory: '../.tmp/jest/unit-tests',
+    setupTestFrameworkScriptFile: '../config/enzime/setup.js',
     transform: {
         '^.+\\.(js|ts|jsx|tsx)$': '../config/jest/transformer.js',
     },
@@ -25,7 +26,7 @@ module.exports = {
 
     collectCoverage: true,
     coverageDirectory: '../.tmp/coverage',
-    collectCoverageFrom: ['**/*.{ts,tsx}', '!src/**/*.d.ts'],
+    collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
     globals: {
         __DEV__: true,
         __PROD__: false,

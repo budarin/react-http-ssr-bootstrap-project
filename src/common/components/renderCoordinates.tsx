@@ -3,7 +3,7 @@ import { TMouseEventRenderer } from './MouseCoordinates';
 
 const renderCoordinates: TMouseEventRenderer = ({ x, y }) => (
     <div>
-        <span>Mouse coordinates:</span>
+        <span className="test">Mouse coordinates:</span>
         <br />
         <span>x = {x ? x : '?'}</span>
         <span>{'   '}</span>

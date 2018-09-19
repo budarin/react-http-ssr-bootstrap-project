@@ -8,7 +8,9 @@ Array [
     Hello World!
   </span>,
   <div>
-    <span>
+    <span
+      className="test"
+    >
       Mouse coordinates:
     </span>
     <br />
