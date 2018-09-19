@@ -8,7 +8,7 @@ Simple React project with SSR
 
 -   React
 -   SSR
--   babel 7 - для точной транспиляции под выбранные платформы и скорости транспиляции
+-   babel 7 - for better tuning transpiler capabilities
 -   webpack 4
 -   HMR
 -   typescript (as typecheccker not transpiller)
@@ -16,6 +16,7 @@ Simple React project with SSR
 -   tslint
 -   stylelint
 -   jest
+-   enzime
 -   puppeteer
 
 to start app - run client & server npm scripts
