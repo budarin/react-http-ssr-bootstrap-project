@@ -1,2 +1,3 @@
 -   генерация отдельного source.map
 -   добавть Enzime для тестов
+-   почему dev сборка загружает .env.production.json в dist?
