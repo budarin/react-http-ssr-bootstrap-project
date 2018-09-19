@@ -1,11 +1,9 @@
 import env from '../../utils/getEnv';
 import getPreLoadingLink from './getPreLoadingLink';
 import disableDevToolsInProduction from '../../utils/disableDevToolsInProduction';
-// @ts-ignore
+
 import packageJson from '../utils/resources/packageJson';
-// @ts-ignore
 import defaultCss from '../utils/resources/defaultCss';
-// @ts-ignore
 import ressCss from './resources/resCss';
 
 const { version } = packageJson as any;
