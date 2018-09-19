@@ -25,7 +25,6 @@ module.exports = {
         '@babel/preset-typescript',
     ],
     plugins: [
-        // './config/babel/myplugin.js',
         'react-hot-loader/babel',
         '@babel/plugin-syntax-dynamic-import',
         '@babel/plugin-proposal-class-properties',
@@ -43,7 +42,11 @@ module.exports = {
             ignore: ['__snapshots__', '__tests__', 'node_modules'],
         },
         development: {
-            plugins: ['@babel/plugin-transform-react-jsx-self', '@babel/plugin-transform-react-jsx-source'],
+            plugins: [
+                './config/babel/myplugin.js',
+                '@babel/plugin-transform-react-jsx-self',
+                '@babel/plugin-transform-react-jsx-source',
+            ],
             ignore: ['__snapshots__', '__tests__', 'node_modules'],
         },
         test: {
