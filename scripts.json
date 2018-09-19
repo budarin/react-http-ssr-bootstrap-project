@@ -53,7 +53,7 @@
     },
     {
         "name": "clean",
-        "command": "rimraf ./.tmp && rimraf ./dist"
+        "command": "rimraf ./.tmp && rimraf ./dist && rimraf ./node_modules/.cache"
     },
     {
         "name": "build",
