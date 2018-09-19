@@ -3,7 +3,7 @@ const path = require('path');
 const config = {
     plugins: [
         require('postcss-mixins')({
-            mixinsDir: path.resolve('src/common/mixins'),
+            mixinsDir: path.resolve('config/postCSS/mixins'),
         }),
         require('postcss-preset-env')({
             stage: 3,
