@@ -1,2 +1,3 @@
 -   сделать свой лоадер на основе typings-for-css-modules-loader
 -   генерация отдельного source.map
+-   добавть Enzime для тестов
