@@ -56,8 +56,22 @@
         "command": "rimraf ./.tmp && rimraf ./dist && rimraf ./node_modules/.cache"
     },
     {
+        "name": "client-build",
+        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/client/webpack.config.prod.babel.js",
+        "env": {
+            "NODE_ENV": "production"
+        }
+    },
+    {
+        "name": "server-build",
+        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/webpack.config.prod.babel.js",
+        "env": {
+            "NODE_ENV": "production"
+        }
+    },
+    {
         "name": "build",
-        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/webpack.config.prod.babel.js",
+        "command": "prun clean && prun client-build && prun server-build",
         "env": {
             "NODE_ENV": "production"
         }

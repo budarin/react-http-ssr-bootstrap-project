@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import OptimizeJsPlugin from 'optimize-js-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 
 import babelConfig from './babelLoaderConfig.js';
@@ -103,7 +104,11 @@ const config = {
         modules: ['node_modules', 'src'],
     },
     plugins: [
-        // new webpack.HashedModuleIdsPlugin(), // в результате хэши не будут неожиданно менят
+        new webpack.HashedModuleIdsPlugin(), // в результате хэши не будут неожиданно менят
+        new ManifestPlugin({
+            fileName: 'assets-manifest.json',
+            writeToFileEmit: true,
+        }),
         new webpack.DefinePlugin({
             __DEV__: false,
             __PROD__: true,

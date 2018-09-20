@@ -16,7 +16,7 @@ function sendStaticFile(req: ServerRequest, res: ServerResponse): void {
 
     // console.log(`\nsendStaticFile: ${filePath}\n`);
 
-    if (!isLegalAsset(url)) {
+    if (__PROD__ && !isLegalAsset(url)) {
         log('>> Illegal static file:', url);
 
         return;
