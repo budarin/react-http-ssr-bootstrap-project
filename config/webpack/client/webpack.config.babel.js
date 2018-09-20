@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import WriteFilePlugin from 'write-file-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 
 import env from '../../../src/utils/getEnv';
@@ -85,7 +86,7 @@ const config = {
             fileName: 'assets-manifest.json',
             writeToFileEmit: true,
         }),
-        // хотя webpack и не размещает файлы в dist - нам нужны данные в assets-manifest а эти же файлы скопирует серверный конфиг
+        new WriteFilePlugin(),
         new CopyWebpackPlugin([
             { from: './node_modules/react/umd/react.development.js' },
             { from: './node_modules/react-dom/umd/react-dom.development.js' },
