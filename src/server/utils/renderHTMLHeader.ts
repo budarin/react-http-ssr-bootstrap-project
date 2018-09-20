@@ -26,7 +26,6 @@ function renderHTMLHeader(): string {
             <link rel="manifest" href="/manifest.json">
             
             <style>${ressCss}</style>
-            
             <style>${defaultCss}</style>
 
             ${disableDevToolsInProduction}
