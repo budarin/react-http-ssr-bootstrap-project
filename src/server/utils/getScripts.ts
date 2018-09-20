@@ -1,24 +1,14 @@
 import env from '../../utils/getEnv';
 import getPreLoadingLink from './getPreLoadingLink';
+import assetsManifest from './resources/assetsManifest';
 
-const devServerScripts = ['react.development.js', 'react-dom.development.js'];
-const devWebpackScripts = ['client.js'];
+const devServerScripts = ['/react.development.js', '/react-dom.development.js'];
+const devWebpackScripts = ['/client.js'];
 const devScripts = [...devServerScripts, ...devWebpackScripts];
-
-const prodScripts = [
-    'npm.react.js',
-    'npm.react-dom.js',
-    'npm.object-assign.js',
-    'npm.css-loader.js',
-    'npm.style-loader.js',
-    'npm.babel.js',
-    'npm.budarin.js',
-    'runtime.js',
-    'client.js',
-];
+const prodScripts = Object.values(assetsManifest).filter(script => script.endsWith('.js'));
 
 const getPrefix = (script: string): string =>
-    __DEV__ ? (devWebpackScripts.includes(script) ? env.STATIC_URL : '/') : '/';
+    __DEV__ ? (devWebpackScripts.includes(script) ? env.STATIC_URL : '') : '';
 
 const StringsToScripts = (scripts: string[]): string => {
     return scripts.map(script => `<script src="${getPrefix(script)}${script}" defer></script>`).join('\n');
