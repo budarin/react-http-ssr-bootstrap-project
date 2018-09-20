@@ -51,21 +51,7 @@ export default class EntrypointsPlugin {
                     ...chunks.filter(c => c != null).map(c => c.files.map(f => publicPath + f)),
                 );
 
-                // console.log('__files__', files);
-
-                // const js = files.filter(f => /.js$/.test(f) && !/.js.map/.test(f));
-                // const css = files.filter(f => /.css$/.test(f) && !/.css.map/.test(f));
-
-                // const entrypoint = {};
-
-                // if (js.length) {
-                //     entrypoint['js'] = js;
-                // }
-                // if (css.length) {
-                //     entrypoint['css'] = css;
-                // }
-
-                data[key] = files.filter(f => f.endsWith('js'));
+                data[key] = files;
             }
             const json = JSON.stringify(data, this.options.replacer, this.options.space);
 

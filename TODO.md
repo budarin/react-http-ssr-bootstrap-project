@@ -1,3 +1,4 @@
 -   использовать EntrypointsPlugin для определения того какие скрипты помещать в заголовок страницы
 -   генерация отдельного source.map
 -   почему dev сборка загружает .env.production.json в dist?
+-   после сборки сервера удалять из dist ненужные файлы (assets-manifest, entrypoint)
