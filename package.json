@@ -6,8 +6,8 @@
         "node": ">=10.9.0"
     },
     "scripts": {
-        "client": "prun start-client",
-        "server": "prun start-server",
+        "1.client": "prun start-client",
+        "2.server": "prun start-server",
         "server:prod": "prun server:prod",
         "build": "prun build",
         "test": "prun test",
