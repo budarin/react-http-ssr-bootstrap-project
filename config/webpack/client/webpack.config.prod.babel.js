@@ -20,8 +20,8 @@ const config = {
     },
     output: {
         publicPath: '/',
-        filename: '[name].js',
-        chunkFilename: '[name].js',
+        filename: '[name].[contenthash:8].js',
+        chunkFilename: '[name].[contenthash:8].js',
         path: path.resolve('./dist'),
     },
     optimization: {
