@@ -1,3 +1,4 @@
+// https://m.habr.com/post/423693/
 import * as webpack from 'webpack';
 
 export interface IChunkDescription {
@@ -49,19 +50,22 @@ export default class EntrypointsPlugin {
                 const files = ([] as string[]).concat(
                     ...chunks.filter(c => c != null).map(c => c.files.map(f => publicPath + f)),
                 );
-                const js = files.filter(f => /.js/.test(f) && !/.js.map/.test(f));
-                const css = files.filter(f => /.css/.test(f) && !/.css.map/.test(f));
 
-                const entrypoint = {};
+                // console.log('__files__', files);
 
-                if (js.length) {
-                    entrypoint['js'] = js;
-                }
-                if (css.length) {
-                    entrypoint['css'] = css;
-                }
+                // const js = files.filter(f => /.js$/.test(f) && !/.js.map/.test(f));
+                // const css = files.filter(f => /.css$/.test(f) && !/.css.map/.test(f));
 
-                data[key] = entrypoint;
+                // const entrypoint = {};
+
+                // if (js.length) {
+                //     entrypoint['js'] = js;
+                // }
+                // if (css.length) {
+                //     entrypoint['css'] = css;
+                // }
+
+                data[key] = files.filter(f => f.endsWith('js'));
             }
             const json = JSON.stringify(data, this.options.replacer, this.options.space);
 

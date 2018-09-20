@@ -16,7 +16,7 @@ const config = {
     devtool: 'none',
     mode: 'production',
     entry: {
-        client: ['./src/client/index.tsx'],
+        main: ['./src/client/index.tsx'],
     },
     output: {
         publicPath: '/',

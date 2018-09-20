@@ -3,7 +3,7 @@ import getPreLoadingLink from './getPreLoadingLink';
 import assetsManifest from './resources/assetsManifest';
 
 const devServerScripts = ['/react.development.js', '/react-dom.development.js'];
-const devWebpackScripts = ['/client.js'];
+const devWebpackScripts = ['/main.js'];
 const devScripts = [...devServerScripts, ...devWebpackScripts];
 const prodScripts = Object.values(assetsManifest).filter(script => script.endsWith('.js'));
 

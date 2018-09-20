@@ -18,7 +18,7 @@ const config = {
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
     entry: {
-        client: ['./src/client/index.tsx'],
+        main: ['./src/client/index.tsx'],
     },
     output: {
         publicPath: STATIC_URL,
