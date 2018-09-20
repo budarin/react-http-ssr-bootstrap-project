@@ -1,7 +1,9 @@
 import path from 'path';
 import webpack from 'webpack';
-import babelConfig from './babelLoaderConfig';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+
 import env from '../../../src/utils/getEnv';
+import babelConfig from './babelLoaderConfig';
 
 const { STATIC_URL } = env;
 const config = {
@@ -74,6 +76,17 @@ const config = {
         modules: ['node_modules'],
     },
     plugins: [
+        // copy for dev only because webpack-devserver doesn't emit files into dist folder - only for http
+        new CopyWebpackPlugin([
+            { from: './node_modules/react/umd/react.development.js' },
+            { from: './node_modules/react-dom/umd/react-dom.development.js' },
+
+            { from: './src/common/robots.txt' },
+            { from: './src/common/manifest.json' },
+            { from: './src/common/favicon.ico' },
+            { from: './src/common/android-chrome-192x192.png' },
+            { from: './src/common/android-chrome-512x512.png' },
+        ]),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             __DEV__: true,
