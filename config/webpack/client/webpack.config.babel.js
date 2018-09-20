@@ -2,8 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import WriteFilePlugin from 'write-file-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
+import WriteFilePlugin from 'write-file-webpack-plugin';
+import EntrypointsPlugin from '../webpackEntrypointPlugin';
 
 import env from '../../../src/utils/getEnv';
 import babelConfig from './babelLoaderConfig';
@@ -85,6 +86,10 @@ const config = {
         new ManifestPlugin({
             fileName: 'assets-manifest.json',
             writeToFileEmit: true,
+        }),
+        new EntrypointsPlugin({
+            filename: 'entrypoints.json',
+            space: 2,
         }),
         new WriteFilePlugin(),
         new CopyWebpackPlugin([

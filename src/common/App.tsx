@@ -3,8 +3,8 @@ import * as React from 'react';
 import appStyles from './app.css';
 import MouseCoordinates from './components/MouseCoordinates';
 import renderCoordinates from './components/renderCoordinates';
-import SimpleButton from '@budarin/simple-button';
-import SimpleText from '@budarin/simple-text';
+import SimpleButton from 'budarin-simple-button';
+import SimpleText from 'budarin-simple-text';
 
 const css = __BROWSER__ ? appStyles.locals : appStyles;
 class App extends React.Component {

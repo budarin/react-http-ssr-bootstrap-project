@@ -4,6 +4,7 @@ import OptimizeJsPlugin from 'optimize-js-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
+import EntrypointsPlugin from '../webpackEntrypointPlugin';
 
 import babelConfig from './babelLoaderConfig.js';
 
@@ -118,6 +119,10 @@ const config = {
         new ManifestPlugin({
             fileName: 'assets-manifest.json',
             writeToFileEmit: true,
+        }),
+        new EntrypointsPlugin({
+            filename: 'entrypoints.json',
+            space: 2,
         }),
         new webpack.DefinePlugin({
             __DEV__: false,
