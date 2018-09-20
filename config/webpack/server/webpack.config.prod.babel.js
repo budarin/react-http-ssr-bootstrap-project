@@ -78,15 +78,6 @@ const config = {
         modules: ['node_modules', 'src'],
     },
     plugins: [
-        new CopyWebpackPlugin([
-            { from: './.env.production.json' },
-
-            { from: './src/common/robots.txt' },
-            { from: './src/common/manifest.json' },
-            { from: './src/common/favicon.ico' },
-            { from: './src/common/android-chrome-192x192.png' },
-            { from: './src/common/android-chrome-512x512.png' },
-        ]),
         new webpack.DefinePlugin({
             __DEV__: false,
             __PROD__: true,

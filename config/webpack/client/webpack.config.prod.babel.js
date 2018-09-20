@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import OptimizeJsPlugin from 'optimize-js-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 
@@ -105,6 +106,15 @@ const config = {
     },
     plugins: [
         new webpack.HashedModuleIdsPlugin(), // в результате хэши не будут неожиданно менят
+        new CopyWebpackPlugin([
+            { from: './.env.production.json' },
+
+            { from: './src/common/robots.txt' },
+            { from: './src/common/manifest.json' },
+            { from: './src/common/favicon.ico' },
+            { from: './src/common/android-chrome-192x192.png' },
+            { from: './src/common/android-chrome-512x512.png' },
+        ]),
         new ManifestPlugin({
             fileName: 'assets-manifest.json',
             writeToFileEmit: true,
