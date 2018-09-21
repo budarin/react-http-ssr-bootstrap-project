@@ -20,8 +20,8 @@ function renderApp() {
     });
 }
 
-if ((window as any).showingSpash) {
-    (window as any).renderClient = renderApp;
+if (window.showingSpash) {
+    window.renderClient = renderApp;
 } else {
     renderApp();
 }
