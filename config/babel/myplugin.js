@@ -1,4 +1,4 @@
-export default function() {
+module.exports = function() {
     return {
         visitor: {
             Program: {
@@ -11,4 +11,4 @@ export default function() {
             },
         },
     };
-}
+};
