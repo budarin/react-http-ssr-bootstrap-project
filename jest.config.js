@@ -26,7 +26,7 @@ module.exports = {
 
     collectCoverage: true,
     coverageDirectory: '../.tmp/coverage',
-    collectCoverageFrom: ['**/*.{ts,tsx}'],
+    collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.d.ts'],
     globals: {
         __DEV__: true,
         __PROD__: false,
