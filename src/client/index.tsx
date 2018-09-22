@@ -24,7 +24,7 @@ function renderApp() {
 if (window.showingSpash) {
     window.renderClient = renderApp;
 } else {
-    Promise.resolve(true).then(renderApp);
+    Promise.resolve().then(renderApp);
 }
 
 if (__DEV__) {
