@@ -57,8 +57,8 @@ function renderHTMLHeader(): string {
                         }
 
                         window.showingSpash = false;
-                    }, 400);
-                }, 250);
+                    }, 1000);
+                }, 200);
             </script>
             
             `;
