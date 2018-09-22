@@ -122,6 +122,7 @@ const config = {
         hot: true,
         inline: true,
         overlay: true,
+        compress: true,
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
