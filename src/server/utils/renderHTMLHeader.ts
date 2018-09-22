@@ -30,11 +30,9 @@ function renderHTMLHeader(): string {
             <style>${defaultCss}</style>
 
             ${disableDevToolsInProduction}
-            
             ${getScripts}
         </head>
         <body>
-            <main id="root">
             <script>
                 window.clearTimeout(window.splashTimer);
 
@@ -62,6 +60,7 @@ function renderHTMLHeader(): string {
                     }, 400);
                 }, 250);
             </script>
+            
             `;
 }
 

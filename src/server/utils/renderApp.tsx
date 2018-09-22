@@ -29,7 +29,9 @@ async function renderApp(req: ServerRequest, res: ServerResponse): Promise<any> 
 
         const appString = renderToString(<App />);
 
+        // wait rendering App
         res.write(renderRemoveSplashScript);
+        res.write('<main id="root">');
         res.write(appString);
         res.end(renderHTMLBottom);
     });
