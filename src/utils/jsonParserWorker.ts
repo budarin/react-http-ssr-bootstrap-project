@@ -4,7 +4,7 @@
 const blob = new Blob(
     [
         'this.onmessage = function(message) {\n' +
-            'var result; try{ result = JSON.parse(message.data)}catch(err){result = err.message} \n' +
+            'var result; try{ result = JSON.parse(message.data); }catch(err){ result = {}; } \n' +
             'postMessage(result);\n' +
             '};',
     ],
