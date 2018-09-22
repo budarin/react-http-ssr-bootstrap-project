@@ -1,12 +1,16 @@
 // This stands in for 'worker.js':
 // https://stackoverflow.com/questions/10494285/is-delegating-json-parse-to-web-worker-worthwile-in-chrome-extension-ff-addon
+// For parsing large json to not to block main process
 
 const blob = new Blob(
     [
-        'this.onmessage = function(message) {\n' +
-            'var result; try{ result = JSON.parse(message.data); }catch(err){ result = {}; } \n' +
-            'postMessage(result);\n' +
-            '};',
+        `this.onmessage = function(message) {
+            try{
+                postMessage(JSON.parse(message.data));
+            }catch(err){
+
+            }
+        };`,
     ],
     {
         type: 'text/javascript',
