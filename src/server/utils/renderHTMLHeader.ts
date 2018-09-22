@@ -33,7 +33,7 @@ function renderHTMLHeader(): string {
             ${getScripts}
         </head>
         <body>
-            <script>
+            <script id="renderSplashScript">
                 window.clearTimeout(window.splashTimer);
 
                 window.splashTimer = setTimeout(() => {

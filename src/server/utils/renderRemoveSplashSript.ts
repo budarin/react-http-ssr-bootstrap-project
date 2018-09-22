@@ -1,4 +1,4 @@
-const renderRemoveSplashScript = `<script>
+const renderRemoveSplashScript = `<script id="removeSplashScript">
                 window.clearTimeout(window.splashTimer);
 
                 function clearSplash() {

@@ -21,10 +21,24 @@ function renderApp() {
     });
 }
 
+function cleanUpHTML() {
+    const renderSplashScript = document.getElementById('renderSplashScript');
+    const removeSplashScript = document.getElementById('removeSplashScript');
+
+    if (renderSplashScript) {
+        document.body.removeChild(renderSplashScript);
+    }
+    if (removeSplashScript) {
+        document.body.removeChild(removeSplashScript);
+    }
+}
+
 if (window.showingSpash) {
     window.renderClient = renderApp;
 } else {
-    Promise.resolve().then(renderApp);
+    Promise.resolve()
+        .then(renderApp)
+        .then(cleanUpHTML);
 }
 
 if (__DEV__) {
