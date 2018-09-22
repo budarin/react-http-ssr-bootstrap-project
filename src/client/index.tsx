@@ -23,7 +23,7 @@ function renderApp() {
 if (window.showingSpash) {
     window.renderClient = renderApp;
 } else {
-    renderApp();
+    Promise.resolve(true).then(renderApp);
 }
 
 if (__DEV__) {
