@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../common/App';
 
+const APP_ROOT_ID = 'root';
+
 function renderApp() {
-    const APP_ROOT_ID = 'root';
     let appRoot = document.getElementById(APP_ROOT_ID);
 
     if (!appRoot) {
