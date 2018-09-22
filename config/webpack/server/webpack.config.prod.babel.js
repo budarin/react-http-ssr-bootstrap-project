@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import babelConfig from './babelLoaderConfig';
 
@@ -58,7 +57,7 @@ const config = {
                         loader: '@budarin/ts-css-loader',
                         options: {
                             modules: true,
-                            usable: true,
+                            browser: true,
                             server: true,
                             camelCase: true,
                             importLoaders: 1,

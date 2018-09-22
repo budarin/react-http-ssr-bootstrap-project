@@ -86,7 +86,7 @@ const config = {
                         loader: '@budarin/ts-css-loader',
                         options: {
                             modules: true,
-                            usable: true,
+                            browser: true,
                             server: true,
                             camelCase: true,
                             importLoaders: 1,
@@ -111,8 +111,8 @@ const config = {
             { from: './.env.production.json' },
 
             { from: './src/common/robots.txt' },
-            { from: './src/common/manifest.json' },
-            { from: './src/common/favicon.ico' },
+            { from: './src/common/manifest.json' }, //, to: '[hash].[ext]' }, TODO:
+            { from: './src/common/favicon.ico' }, //, to: '[hash].[ext]' }, TODO:
             { from: './src/common/android-chrome-192x192.png' },
             { from: './src/common/android-chrome-512x512.png' },
         ]),
