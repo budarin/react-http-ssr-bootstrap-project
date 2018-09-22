@@ -37,7 +37,7 @@ function renderHTMLHeader(): string {
                 window.clearTimeout(window.splashTimer);
 
                 window.splashTimer = setTimeout(() => {
-                    const rootEl = document.getElementById('root');
+                    const rootEl = document.body;
                     const splash = document.createElement('div');
                     splash.id = 'splash';
                     splash.style = 'height: 100%; display: flex; align-items: center; justify-content: center';

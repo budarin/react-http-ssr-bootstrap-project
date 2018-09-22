@@ -2,7 +2,7 @@ const renderRemoveSplashScript = `<script id="removeSplashScript">
                 window.clearTimeout(window.splashTimer);
 
                 function clearSplash() {
-                    const rootEl = document.getElementById('root');
+                    const rootEl = document.body;
                     const splashEl = document.getElementById('splash');
 
                     if (splashEl) {

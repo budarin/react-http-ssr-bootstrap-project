@@ -20,7 +20,7 @@ async function renderApp(req: ServerRequest, res: ServerResponse): Promise<any> 
     res.writeHead(200, headers);
     res.write(renderHTMLHeader());
 
-    const SSRTimeout = 20;
+    const SSRTimeout = 320;
 
     await new Promise(resolve => {
         setTimeout(() => resolve(true), SSRTimeout);

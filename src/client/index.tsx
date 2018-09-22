@@ -19,26 +19,25 @@ function renderApp() {
             body.classList.add('interactive');
         }
     });
+
+    return true;
+}
+
+function startApp() {
+    Promise.resolve(true)
+        .then(renderApp)
+        .finally(cleanUpHTML);
 }
 
 function cleanUpHTML() {
-    const renderSplashScript = document.getElementById('renderSplashScript');
-    const removeSplashScript = document.getElementById('removeSplashScript');
-
-    if (renderSplashScript) {
-        document.body.removeChild(renderSplashScript);
-    }
-    if (removeSplashScript) {
-        document.body.removeChild(removeSplashScript);
-    }
+    // clear HEAD & body from temporary content
+    delete window.renderClient;
 }
 
 if (window.showingSpash) {
-    window.renderClient = renderApp;
+    window.renderClient = startApp;
 } else {
-    Promise.resolve()
-        .then(renderApp)
-        .then(cleanUpHTML);
+    startApp();
 }
 
 if (__DEV__) {
