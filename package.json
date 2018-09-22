@@ -8,7 +8,7 @@
     "scripts": {
         "1.client": "prun start-client",
         "2.server": "prun start-server",
-        "server:prod": "prun server:prod",
+        "server-prod": "prun server:prod",
         "build": "prun build",
         "test": "prun test",
         "test-watch": "prun test-watch",
