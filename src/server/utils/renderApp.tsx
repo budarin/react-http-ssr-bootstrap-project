@@ -22,6 +22,7 @@ async function renderApp(req: ServerRequest, res: ServerResponse): Promise<any> 
 
     const SSRTimeout = 20;
 
+    // give some time to initial render other requests
     await new Promise(resolve => {
         setTimeout(() => resolve(true), SSRTimeout);
     }).then(() => {
