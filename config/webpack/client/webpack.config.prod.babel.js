@@ -5,8 +5,11 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 import EntrypointsPlugin from '../webpackEntrypointPlugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 
 import babelConfig from './babelLoaderConfig.js';
+
+const zopfli = require('@gfx/zopfli');
 
 const config = {
     watch: false,
@@ -138,6 +141,17 @@ const config = {
             filename: '[file].map',
             publicPath: 'https://localhost:4430/',
             // append: false
+        }),
+        new CompressionPlugin({
+            cache: '.tmp/gzip',
+            filename: '[path].gz[query]',
+            test: /\.js(\?.*)?$/i,
+            compressionOptions: { level: 9, numiterations: 15 },
+            algorithm(input, compressionOptions, callback) {
+                return zopfli.gzip(input, compressionOptions, callback);
+            },
+            threshold: 1024,
+            minRatio: 0.8,
         }),
     ],
 };
