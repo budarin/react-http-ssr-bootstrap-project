@@ -4,8 +4,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const dir = path.resolve('./dist');
-const filePath = path.resolve('./dist/server.js');
+const dir = path.resolve('dist');
+const filePath = path.resolve('dist/server.js');
 
 if (!fs.existsSync(filePath)) {
     if (!fs.existsSync(dir)) {
