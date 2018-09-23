@@ -140,7 +140,7 @@ const config = {
             columns: false,
             filename: '[file].map',
             publicPath: 'https://localhost:4430/',
-            // append: false
+            append: false,
         }),
         new CompressionPlugin({
             cache: '.tmp/gzip',

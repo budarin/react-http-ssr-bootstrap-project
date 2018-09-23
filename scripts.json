@@ -4,8 +4,12 @@
         "command": "tsc"
     },
     {
+        "name": "cleanManifest",
+        "command": "node ./tools/remove-map-gz-from-assets"
+    },
+    {
         "name": "start-client",
-        "command": "rimraf ./dist && webpack-dev-server -r config/webpack/client/register-ts.js --config config/webpack/client/webpack.config.babel.js",
+        "command": "prun clean && webpack-dev-server -r config/webpack/client/register-ts.js --config config/webpack/client/webpack.config.babel.js",
         "env": {
             "NODE_ENV": "development",
             "DEBUG": "app:*"
@@ -46,7 +50,7 @@
     },
     {
         "name": "client-build",
-        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/client/webpack.config.prod.babel.js",
+        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/client/webpack.config.prod.babel.js",
         "env": {
             "NODE_ENV": "production"
         }
@@ -56,22 +60,8 @@
         "command": "rimraf ./.tmp && rimraf ./dist && rimraf ./node_modules/.cache"
     },
     {
-        "name": "client-build",
-        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/client/webpack.config.prod.babel.js",
-        "env": {
-            "NODE_ENV": "production"
-        }
-    },
-    {
-        "name": "server-build",
-        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/webpack.config.prod.babel.js",
-        "env": {
-            "NODE_ENV": "production"
-        }
-    },
-    {
         "name": "build",
-        "command": "prun clean && prun client-build && prun server-build",
+        "command": "prun client-build && prun cleanManifest && prun server-build",
         "env": {
             "NODE_ENV": "production"
         }
