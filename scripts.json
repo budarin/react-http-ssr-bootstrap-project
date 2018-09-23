@@ -9,7 +9,7 @@
     },
     {
         "name": "start-client",
-        "command": "prun clean && webpack-dev-server -r config/webpack/client/register-ts.js --config config/webpack/client/webpack.config.babel.js",
+        "command": "prun clean-dist && webpack-dev-server -r config/webpack/client/register-ts.js --config config/webpack/client/webpack.config.babel.js",
         "env": {
             "NODE_ENV": "development",
             "DEBUG": "app:*"
@@ -54,6 +54,10 @@
         "env": {
             "NODE_ENV": "production"
         }
+    },
+    {
+        "name": "clean-dist",
+        "command": "rimraf ./dist"
     },
     {
         "name": "clean",
