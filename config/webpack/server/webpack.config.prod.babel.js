@@ -63,6 +63,7 @@ const config = {
                             importLoaders: 1,
                             localIdentName: '[hash:base64:8]',
                             sourceMap: true,
+                            minify: true,
                         },
                     },
                     {
