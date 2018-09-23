@@ -33,6 +33,12 @@ function renderHTMLHeader(): string {
             ${getScripts}
         </head>
         <body>
+            <noscript>
+                <div style="position: fixed; height: 100%; width: 100%; top: 0; background-color: #fff; padding: 20px;">
+                    Извините, для корректной работы страницы необходимо <a href="https://www.enable-javascript.com/ru" target="_blank">включить javascript</a>.
+                </div>
+            </noscript>
+
             <script id="renderSplashScript">
                 window.clearTimeout(window.splashTimer);
 
