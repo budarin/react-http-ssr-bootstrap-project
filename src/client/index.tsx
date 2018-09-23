@@ -25,12 +25,27 @@ function renderApp() {
 
 function startApp() {
     Promise.resolve(true)
-        .then(renderApp)
-        .finally(cleanUpHTML);
+        .finally(cleanUpHTML)
+        .then(renderApp);
 }
 
 function cleanUpHTML() {
     // clear HEAD & body from temporary content
+    const noScript = document.getElementsByTagName('noscript')[0];
+    if (noScript) {
+        document.body.removeChild(noScript);
+    }
+
+    const renderSplashScript = document.getElementById('renderSplashScript');
+    if (renderSplashScript) {
+        document.body.removeChild(renderSplashScript);
+    }
+
+    const removeSplashScript = document.getElementById('removeSplashScript');
+    if (removeSplashScript) {
+        document.body.removeChild(removeSplashScript);
+    }
+
     delete window.renderClient;
 }
 
