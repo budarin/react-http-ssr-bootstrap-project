@@ -110,7 +110,6 @@ const config = {
         modules: ['node_modules', 'src'],
     },
     plugins: [
-        new webpack.HashedModuleIdsPlugin(), // в результате хэши не будут неожиданно менят
         new CopyWebpackPlugin([
             { from: './.env.production.json' },
 
@@ -124,6 +123,7 @@ const config = {
             fileName: 'assets-manifest.json',
             writeToFileEmit: true,
         }),
+        new webpack.HashedModuleIdsPlugin(), // в результате хэши не будут неожиданно менят
         new EntrypointsPlugin({
             filename: 'entrypoints.json',
             space: 2,

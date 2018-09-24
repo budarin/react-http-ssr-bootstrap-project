@@ -82,16 +82,6 @@ const config = {
         modules: ['node_modules', 'src'],
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new ManifestPlugin({
-            fileName: 'assets-manifest.json',
-            writeToFileEmit: true,
-        }),
-        new EntrypointsPlugin({
-            filename: 'entrypoints.json',
-            space: 2,
-        }),
-        new WriteFilePlugin(),
         new CopyWebpackPlugin([
             { from: './node_modules/react/umd/react.development.js' },
             { from: './node_modules/react-dom/umd/react-dom.development.js' },
@@ -102,6 +92,16 @@ const config = {
             { from: './src/common/android-chrome-192x192.png' },
             { from: './src/common/android-chrome-512x512.png' },
         ]),
+        new ManifestPlugin({
+            fileName: 'assets-manifest.json',
+            writeToFileEmit: true,
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new EntrypointsPlugin({
+            filename: 'entrypoints.json',
+            space: 2,
+        }),
+        new WriteFilePlugin(),
         new webpack.DefinePlugin({
             __DEV__: true,
             __PROD__: false,
