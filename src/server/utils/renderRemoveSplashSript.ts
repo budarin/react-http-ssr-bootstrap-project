@@ -5,10 +5,8 @@ const renderRemoveSplashScript = `<script id="removeSplashScript">
                     const rootEl = document.body;
                     const splashEl = document.getElementById('splash');
 
-                    if (splashEl) {
-                        while(rootEl.children.length) {
-                            rootEl.removeChild(rootEl.children[0]);
-                        }
+                    while(rootEl.children.length) {
+                        rootEl.removeChild(rootEl.children[0]);
                     }
 
                     delete window.splashTimer;
