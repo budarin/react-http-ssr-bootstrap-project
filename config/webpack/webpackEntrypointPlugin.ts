@@ -55,6 +55,9 @@ export default class EntrypointsPlugin {
             }
             const json = JSON.stringify(data, this.options.replacer, this.options.space);
 
+            // here we can get asset size fo entry point to sort by size or include size or priority into entrypoint
+            // console.log('\n\nassets', Object.keys(compilation.assets));
+
             compilation.assets[this.options.filename] = {
                 source: () => json,
                 size: () => json.length,
