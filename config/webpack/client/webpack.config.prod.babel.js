@@ -124,10 +124,6 @@ const config = {
             writeToFileEmit: true,
         }),
         new webpack.HashedModuleIdsPlugin(), // в результате хэши не будут неожиданно менят
-        new EntrypointsPlugin({
-            filename: 'entrypoints.json',
-            space: 2,
-        }),
         new webpack.DefinePlugin({
             __DEV__: false,
             __PROD__: true,
@@ -153,6 +149,10 @@ const config = {
             },
             threshold: 1024,
             minRatio: 0.8,
+        }),
+        new EntrypointsPlugin({
+            filename: 'entrypoints.json',
+            space: 2,
         }),
     ],
 };

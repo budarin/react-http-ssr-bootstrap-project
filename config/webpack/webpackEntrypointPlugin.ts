@@ -46,10 +46,15 @@ export default class EntrypointsPlugin {
                     };
                     return filter == null || filter(chunk) ? chunk : null;
                 });
-
-                const files = ([] as string[]).concat(
-                    ...chunks.filter(c => c != null).map(c => c.files.map(f => publicPath + f)),
-                );
+                const getNotNullChunks = chunk => chunk != null;
+                const getFilesInChunk = (chunk: IChunkDescription): string[] =>
+                    chunk.files.reduce((acc: string[], file: string) => {
+                        if (!file.endsWith('.map') && !file.endsWith('.gz')) {
+                            acc.push(publicPath + file);
+                        }
+                        return acc;
+                    }, []);
+                const files = ([] as string[]).concat(...chunks.filter(getNotNullChunks).map(getFilesInChunk));
 
                 data[key] = files;
             }
