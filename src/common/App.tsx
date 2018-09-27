@@ -16,7 +16,7 @@ class App extends React.Component {
 
         return (
             <>
-                <span className={css.hello}>Hello World_!</span>
+                <span className={css.hello}>Hello World__!</span>
                 <MouseCoordinates>{renderCoordinates}</MouseCoordinates>
                 <br />
                 <SimpleButton text="Кнопка!" />
