@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import * as mime from 'mime-types';
-import logger from '../../utils/getLogger';
+import logger from '../../utils/getServerLogger';
 import { IncomingMessage, ServerResponse } from 'http';
 
 import isLegalAsset from './isLegalAsset';

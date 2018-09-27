@@ -1,6 +1,6 @@
 import fs from 'fs';
 import https from 'https';
-import logger from '../utils/getLogger';
+import logger from '../utils/getServerLogger';
 
 import env from '../utils/getEnv';
 import appServer from './appServer';
