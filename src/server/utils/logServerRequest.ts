@@ -1,9 +1,9 @@
 import debug from 'debug';
-import { ServerRequest } from 'http';
+import { IncomingMessage } from 'http';
 
 const log = debug('app:server');
 
-function logServerRequest(req: ServerRequest): void {
+function logServerRequest(req: IncomingMessage): void {
     const { url, method } = req;
 
     log('>> Path:', url, '>> Method:', method);

@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import debug from 'debug';
 import * as mime from 'mime-types';
-import { ServerResponse, ServerRequest } from 'http';
+import { IncomingMessage, ServerResponse } from 'http';
 
 import isLegalAsset from './isLegalAsset';
 import serverRootPath from './serverRootPath';
@@ -10,7 +10,7 @@ import serverRootPath from './serverRootPath';
 const log = debug('app:server');
 const logError = debug('app:server:error');
 
-function sendStaticFile(req: ServerRequest, res: ServerResponse): void {
+function sendStaticFile(req: IncomingMessage, res: ServerResponse): void {
     const { url = '' } = req;
     const filePath = path.resolve(path.join(serverRootPath, url));
 

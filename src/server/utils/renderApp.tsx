@@ -1,7 +1,7 @@
 import debug from 'debug';
 import * as React from 'react';
 import { renderToString } from 'react-dom/server'; // tslint:disable-line
-import { ServerRequest, ServerResponse } from 'http'; // tslint:disable-line
+import { IncomingMessage, ServerResponse } from 'http'; // tslint:disable-line
 
 import App from '../../common/App';
 import renderHTMLHeader from './renderHTMLHeader';
@@ -14,7 +14,7 @@ const headers = {
 };
 
 // @ts-ignore
-async function renderApp(req: ServerRequest, res: ServerResponse): Promise<any> {
+async function renderApp(req: IncomingMessage, res: ServerResponse): Promise<any> {
     log('>> Render app');
 
     res.writeHead(200, headers);

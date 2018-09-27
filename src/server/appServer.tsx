@@ -1,11 +1,11 @@
-import { ServerRequest, ServerResponse } from 'http'; // tslint:disable-line
+import { IncomingMessage, ServerResponse } from 'http'; // tslint:disable-line
 
 import renderApp from './utils/renderApp';
 import isLegalRoute from './utils/isLegalRoute';
 import sendStaticFile from './utils/sendStaticFile';
 import logServerRequest from './utils/logServerRequest';
 
-const app = async (req: ServerRequest, res: ServerResponse) => {
+const app = async (req: IncomingMessage, res: ServerResponse) => {
     logServerRequest(req);
 
     if (req.url === '/ping') {
