@@ -1,14 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import debug from 'debug';
 import * as mime from 'mime-types';
+import logger from '../../utils/getLogger';
 import { IncomingMessage, ServerResponse } from 'http';
 
 import isLegalAsset from './isLegalAsset';
 import serverRootPath from './serverRootPath';
-
-const log = debug('app:server');
-const logError = debug('app:server:error');
 
 function sendStaticFile(req: IncomingMessage, res: ServerResponse): void {
     const { url = '' } = req;
@@ -17,14 +14,14 @@ function sendStaticFile(req: IncomingMessage, res: ServerResponse): void {
     // console.log(`\nsendStaticFile: ${filePath}\n`);
 
     if (__PROD__ && !isLegalAsset(url)) {
-        log('>> Illegal static file:', url);
+        logger.info('>> Illegal static file:', url);
 
         return;
     }
 
     fs.exists(filePath, exists => {
         if (exists) {
-            log('>> Static file:', req.url);
+            logger.info('>> Static file:', req.url);
 
             res.writeHead(200, {
                 'content-type': mime.lookup(url) || '',
@@ -32,7 +29,7 @@ function sendStaticFile(req: IncomingMessage, res: ServerResponse): void {
 
             fs.createReadStream(filePath).pipe(res);
         } else {
-            logError('>> Static file is absent:', req.url);
+            logger.error('>> Static file is absent:', req.url);
         }
     });
 }

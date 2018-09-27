@@ -1,12 +1,10 @@
-import debug from 'debug';
 import { IncomingMessage } from 'http';
-
-const log = debug('app:server');
+import logger from '../../utils/getLogger';
 
 function logServerRequest(req: IncomingMessage): void {
     const { url, method } = req;
 
-    log('>> Path:', url, '>> Method:', method);
+    logger.info('>> Path:', url, '>> Method:', method);
 }
 
 export default logServerRequest;

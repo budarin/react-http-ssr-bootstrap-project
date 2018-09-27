@@ -1,12 +1,10 @@
 import fs from 'fs';
-import debug from 'debug';
 import https from 'https';
+import logger from '../utils/getLogger';
 
 import env from '../utils/getEnv';
 import appServer from './appServer';
 
-const log = debug('app:server');
-const logError = debug('app:server:error');
 const { SERVER_PORT, SERVER_HOST, SERVER_URL, KEYS_FOLDER } = env;
 
 const server = https.createServer(
@@ -19,7 +17,7 @@ const server = https.createServer(
 );
 
 const shutdown = (code: number) => {
-    log('Останавливаем сервер ...');
+    logger.error('Останавливаем сервер ...');
 
     server.close();
     process.exit(code || 0);
@@ -31,14 +29,14 @@ process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
 
 process.on('unhandledRejection', err => {
-    logError(`unhandledRejection: Reason: ${err.message}\n ${err.stack}`);
+    logger.error(`unhandledRejection: Reason: ${err.message}\n ${err.stack}`);
 });
 
 process.on('uncaughtException', err => {
-    logError('Необработанная ошибка приложения', err.stack);
+    logger.error('Необработанная ошибка приложения', err.stack);
     shutdown(1);
 });
 
 server.listen(SERVER_PORT, SERVER_HOST);
 
-log(`Сервер запущен по адресу: ${SERVER_URL || 'error'}`);
+logger.info(`Сервер запущен по адресу: ${SERVER_URL || 'error'}`);
