@@ -21,7 +21,7 @@
     },
     "browserslist": "> 3%, not ie < 13, not dead",
     "lint-staged": {
-        "*.{js,json,css,md}": [
+        "*.{js,jsx,ts,tsx,json,css,md}": [
             "prettier --write",
             "git add"
         ]
