@@ -10,7 +10,7 @@ function parseJSON(JSONString: string) {
             console.log('Ошибка разбора JSON строки:', JSONString, '->', ex.message);
         }
         if (__SERVER__) {
-            const logger = require('../utils/getLogger');
+            const logger = require('../server/utils/getServerLogger');
 
             logger.error('Ошибка разбора JSON строки:', JSONString, '->', ex.message);
         }

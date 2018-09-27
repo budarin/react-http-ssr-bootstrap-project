@@ -1,5 +1,5 @@
 import { IncomingMessage } from 'http';
-import logger from '../../utils/getServerLogger';
+import logger from './getServerLogger';
 
 function logServerRequest(req: IncomingMessage): void {
     const { url, method } = req;

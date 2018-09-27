@@ -1,5 +1,5 @@
 import http2, { ServerHttp2Stream } from 'http2'; // tslint:disable-line
-import logger from '../../utils/getServerLogger';
+import logger from './getServerLogger';
 
 const { HTTP_STATUS_NOT_FOUND, NGHTTP2_REFUSED_STREAM, HTTP_STATUS_INTERNAL_SERVER_ERROR } = http2.constants;
 

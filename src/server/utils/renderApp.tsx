@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { renderToString } from 'react-dom/server'; // tslint:disable-line
 import { IncomingMessage, ServerResponse } from 'http'; // tslint:disable-line
-import logger from '../../utils/getServerLogger';
+import logger from './getServerLogger';
 
 import App from '../../common/App';
 import renderHTMLHeader from './renderHTMLHeader';
