@@ -16,7 +16,7 @@ class App extends React.Component {
 
         return (
             <>
-                <span className={css.hello}>Hello World!</span>
+                <span className={css.hello}>Hello World !</span>
 
                 <MouseCoordinates>{renderCoordinates}</MouseCoordinates>
                 <br />
