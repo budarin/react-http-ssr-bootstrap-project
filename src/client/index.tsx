@@ -25,7 +25,7 @@ function renderApp() {
 
 function startApp() {
     Promise.resolve(true)
-        .finally(cleanUpHTML)
+        .then(cleanUpHTML)
         .then(renderApp);
 }
 

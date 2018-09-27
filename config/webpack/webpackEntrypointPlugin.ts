@@ -49,7 +49,7 @@ export default class EntrypointsPlugin {
                 const getNotNullChunks = chunk => chunk != null;
                 const getFilesInChunk = (chunk: IChunkDescription): string[] =>
                     chunk.files.reduce((acc: string[], file: string) => {
-                        if (!file.endsWith('.map') && !file.endsWith('.gz')) {
+                        if (!['map', 'gz'].includes(file.split('.').pop())) {
                             acc.push(publicPath + file);
                         }
                         return acc;
