@@ -2,3 +2,4 @@
 -   copy plugin не сохраняет оригинальные имена в assets-manifest
 -   splash вставить как html со стилем display:none и только по таймеру делать display:block ?
     или отображать shell приложения таким образом?
+-   git hooks
