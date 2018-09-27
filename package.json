@@ -19,12 +19,6 @@
         "upgrade": "prun upgrade"
     },
     "browserslist": "> 3%, not ie < 13, not dead",
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "pre-push": "npm test"
-        }
-    },
     "lint-staged": {
         "*.{js,jsx,ts,tsx,json,css,md}": [
             "prettier --write",
@@ -86,6 +80,7 @@
         "enzyme": "^3.6.0",
         "enzyme-adapter-react-16": "^1.5.0",
         "fake-style-loader": "^1.0.1",
+        "husky": "^1.0.1",
         "identity-obj-proxy": "^3.0.0",
         "image-size-loader": "^0.7.0",
         "jest": "^23.6.0",
