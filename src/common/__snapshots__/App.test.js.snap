@@ -29,6 +29,7 @@ Array [
   <br />,
   <button
     className="btn"
+    onClick={[Function]}
   >
     <span
       style={
