@@ -19,4 +19,5 @@ Simple React project with SSR
 -   enzime
 -   puppeteer
 
-to start app - run client & server npm scripts
+to start app - run client & server npm scripts.
+try out production mode with "server-prod" command.
