@@ -120,5 +120,17 @@
             "NODE_ENV": "production",
             "DEBUG": "app:*"
         }
+    },
+    {
+        "name": "release:major",
+        "command": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags"
+    },
+    {
+        "name": "release:minor",
+        "command": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags"
+    },
+    {
+        "name": "release:patch",
+        "command": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
     }
 ]
