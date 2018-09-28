@@ -9,6 +9,9 @@ import SimpleText from 'budarin-simple-text';
 const css = __BROWSER__ ? appStyles.locals : appStyles;
 
 class App extends React.Component {
+    // tslint:disable-next-line
+    btnClickHandler = () => console.log('btn is clicked');
+
     render() {
         if (__BROWSER__) {
             appStyles.use();
@@ -20,7 +23,7 @@ class App extends React.Component {
 
                 <MouseCoordinates>{renderCoordinates}</MouseCoordinates>
                 <br />
-                <SimpleButton text="Кнопка!" />
+                <SimpleButton text="Кнопка!" onClick={this.btnClickHandler} />
                 <br />
                 <SimpleText>Text</SimpleText>
             </>
