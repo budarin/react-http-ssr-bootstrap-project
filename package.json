@@ -51,7 +51,7 @@
         "@babel/preset-typescript": "^7.1.0",
         "@babel/register": "^7.0.0",
         "@babel/runtime": "^7.1.2",
-        "@budarin/ts-css-loader": "^1.1.5",
+        "@budarin/ts-css-loader": "^1.1.6",
         "@gfx/zopfli": "^1.0.9",
         "@types/debug": "0.0.30",
         "@types/mime-types": "^2.1.0",
