@@ -3,8 +3,7 @@ const renderRemoveSplashScript = `<script id="removeSplashScript">
 
                 function clearSplash() {
                     const rootEl = document.body;
-                    const splashEl = document.getElementById('splash');
-
+                    
                     while(rootEl.children.length) {
                         rootEl.removeChild(rootEl.children[0]);
                     }
