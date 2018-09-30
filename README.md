@@ -12,6 +12,7 @@ Simple React project with SSR
 -   webpack 4
 -   HMR
 -   typescript (as typecheccker not transpiller)
+-   typescript loader for CSS-modules
 -   prettier
 -   tslint
 -   stylelint
