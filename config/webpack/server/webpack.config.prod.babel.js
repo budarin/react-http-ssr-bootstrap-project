@@ -33,7 +33,14 @@ const config = {
                 },
             },
             {
-                test: /\.(svg|png|jpg|gif)$/,
+                test: /\.svg$/,
+                include: [path.resolve('./src'), path.resolve('node_modules')],
+                use: {
+                    loader: 'raw-loader',
+                },
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
                 include: path.resolve('./src'),
                 exclude: path.resolve('node_modules'),
                 use: {
