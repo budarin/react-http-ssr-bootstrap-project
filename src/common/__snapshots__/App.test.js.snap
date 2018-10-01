@@ -33,12 +33,7 @@ Array [
   >
     <svg
       className="icon"
-      style={
-        Object {
-          "height": "100px",
-          "width": "100px",
-        }
-      }
+      style={Object {}}
       version="1.1"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"

@@ -24,7 +24,7 @@ module.exports = {
     notify: true,
     notifyMode: 'failure',
 
-    collectCoverage: true,
+    collectCoverage: false,
     coverageDirectory: '../.tmp/coverage',
     collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.d.ts'],
     globals: {
