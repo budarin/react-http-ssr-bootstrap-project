@@ -3,7 +3,7 @@ import disableDevToolsInProduction from '../../utils/disableDevToolsInProduction
 
 import packageJson from '../utils/resources/packageJson';
 import defaultCss from '../utils/resources/defaultCss';
-import ressCss from './resources/resCss';
+import normalizeCss from './resources/normalizeCss';
 import assetsManifest from './resources/assetsManifest';
 
 const { version } = packageJson as any;
@@ -26,7 +26,7 @@ function renderHTMLHeader(): string {
             <link rel="shortcut icon" href="${(assetsManifest as any)['favicon.ico']}">
             <link rel="manifest" href="${(assetsManifest as any)['manifest.json']}">
             
-            <style>${ressCss}</style>
+            <style>${normalizeCss}</style>
             <style>${defaultCss}</style>
 
             ${disableDevToolsInProduction}
