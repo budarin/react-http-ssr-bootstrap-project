@@ -72,7 +72,7 @@
     },
     {
         "name": "upgrade",
-        "command": "npm-upgrade && npm install && npm test"
+        "command": "npm-upgrade && check-dependencies --install"
     },
     {
         "name": "start-all",
