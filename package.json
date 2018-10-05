@@ -70,7 +70,7 @@
         "babel-plugin-lodash": "^3.3.4",
         "babel-plugin-preval": "^3.0.1",
         "babel-plugin-transform-react-class-to-function": "^1.1.2",
-        "budarin-simple-button": "^1.2.26",
+        "budarin-simple-button": "^1.2.27",
         "budarin-simple-text": "^1.2.11",
         "check-dependencies": "^1.1.0",
         "compression-webpack-plugin": "^2.0.0",
