@@ -81,6 +81,7 @@
         "enzyme": "^3.7.0",
         "enzyme-adapter-react-16": "^1.6.0",
         "fake-style-loader": "^1.0.1",
+        "fast-async": "^6.3.8",
         "file-loader": "^2.0.0",
         "generate-changelog": "^1.7.1",
         "husky": "^1.1.1",

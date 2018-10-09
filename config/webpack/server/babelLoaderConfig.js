@@ -12,6 +12,7 @@ module.exports = {
                 targets: {
                     node: 'current',
                 },
+                exclude: ['transform-async-to-generator', 'transform-regenerator'],
             },
         ],
         '@babel/preset-react',
@@ -19,11 +20,12 @@ module.exports = {
     ],
     plugins: [
         'preval',
+        ['module:fast-async', { spec: true }],
         'react-hot-loader/babel',
         '@babel/plugin-syntax-dynamic-import',
         '@babel/plugin-proposal-class-properties',
         ['babel-plugin-lodash', { id: ['lodash', 'recompose'] }],
-        '@babel/plugin-transform-runtime',
+        ['@babel/plugin-transform-runtime', { regenerator: false }],
     ],
     env: {
         production: {
