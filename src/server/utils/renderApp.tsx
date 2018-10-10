@@ -9,9 +9,7 @@ import renderHTMLBottom from './renderHTMLBottom';
 import renderRemoveSplashScript from './renderRemoveSplashSript';
 
 // tslint:disable-next-line
-const headers = {
-    'Content-Type': 'text/html; charset=utf-8',
-};
+const headers = { 'Content-Type': 'text/html; charset=utf-8' };
 
 // @ts-ignore
 async function renderApp(req: IncomingMessage, res: ServerResponse): Promise<any> {
