@@ -35,6 +35,7 @@
     ],
     "author": "Vadim Budarin",
     "license": "MIT",
+    "main": "dist/server.js",
     "devDependencies": {
         "@babel/cli": "^7.1.2",
         "@babel/core": "^7.1.2",
