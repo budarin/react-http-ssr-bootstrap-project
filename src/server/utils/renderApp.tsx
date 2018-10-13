@@ -1,17 +1,15 @@
 import * as React from 'react';
 import { renderToString } from 'react-dom/server'; // tslint:disable-line
 import { IncomingMessage, ServerResponse } from 'http'; // tslint:disable-line
-import logger from './getServerLogger';
 
 import App from '../../common/App';
+import logger from './getServerLogger';
 import renderHTMLHeader from './renderHTMLHeader';
 import renderHTMLBottom from './renderHTMLBottom';
 import renderRemoveSplashScript from './renderRemoveSplashSript';
 
 // tslint:disable-next-line
-const headers = {
-    'Content-Type': 'text/html; charset=utf-8',
-};
+const headers = { 'Content-Type': 'text/html; charset=utf-8' };
 
 // @ts-ignore
 async function renderApp(req: IncomingMessage, res: ServerResponse): Promise<any> {

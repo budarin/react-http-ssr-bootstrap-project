@@ -83,7 +83,7 @@
     },
     {
         "name": "test",
-        "command": "jest --detectOpenHandles --no-cache  --forceExit --collectCoverage",
+        "command": "jest --detectOpenHandles --no-cache  --forceExit --collectCoverage --notify --notifyMode=failure",
         "env": {
             "NODE_ENV": "test"
         }
