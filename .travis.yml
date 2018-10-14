@@ -3,7 +3,7 @@ language: node_js
 node_js:
     - '0.11'
 install:
-    - npm ci
+    - npm i
 script:
     - npm run build
     - npm test
