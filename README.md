@@ -2,7 +2,7 @@
 
 React ssr bootstrap project
 
-[![dependencies](https://david-dm.org/budarin/react-http-ssr-bootstrap-project.svg)](https://david-dm.org/budarin/react-http-ssr-bootstrap-project) [![devDependencies](https://david-dm.org/budarin/react-http-ssr-bootstrap-project/dev-status.svg)](https://david-dm.org/budarin/react-http-ssr-bootstrap-project?type=dev)
+[![dependencies](https://david-dm.org/budarin/react-http-ssr-bootstrap-project.svg)](https://david-dm.org/budarin/react-http-ssr-bootstrap-project) [![devDependencies](https://david-dm.org/budarin/react-http-ssr-bootstrap-project/dev-status.svg)](https://david-dm.org/budarin/react-http-ssr-bootstrap-project?type=dev) [![Greenkeeper badge](https://badges.greenkeeper.io/budarin/react-http-ssr-bootstrap-project.svg)](https://greenkeeper.io/)
 
 Simple React project with SSR
 
