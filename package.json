@@ -95,7 +95,7 @@
         "mime-types": "^2.1.20",
         "nodemon": "^1.18.4",
         "optimize-js-plugin": "0.0.4",
-        "pino": "^5.7.0",
+        "pino": "^5.8.0",
         "pino-pretty": "^2.2.2",
         "postcss": "^7.0.5",
         "postcss-loader": "^3.0.0",
