@@ -9,6 +9,7 @@ import CompressionPlugin from 'compression-webpack-plugin';
 
 import babelConfig from './babelLoaderConfig.js';
 
+// tslint:disable-next-line
 const zopfli = require('@gfx/zopfli');
 
 const config = {
@@ -121,8 +122,8 @@ const config = {
             { from: './.env.production.json' },
 
             { from: './src/common/robots.txt' },
-            { from: './src/common/manifest.json' }, //, to: '[hash].[ext]' }, TODO:
-            { from: './src/common/favicon.ico' }, //, to: '[hash].[ext]' }, TODO:
+            { from: './src/common/manifest.json', to: '[hash].[ext]' }, // TODO:
+            { from: './src/common/favicon.ico', to: '[hash].[ext]' }, // TODO:
             { from: './src/common/android-chrome-192x192.png' },
             { from: './src/common/android-chrome-512x512.png' },
         ]),
@@ -143,6 +144,7 @@ const config = {
         new webpack.SourceMapDevToolPlugin({
             columns: false,
             filename: '[file].map',
+            // @ts-ignore
             publicPath: 'https://localhost:4430/',
             append: false,
         }),

@@ -9,7 +9,7 @@
     },
     {
         "name": "start-client",
-        "command": "prun clean-dist && webpack-dev-server -r config/webpack/client/register-ts.js --config config/webpack/client/webpack.config.babel.js",
+        "command": "prun clean-dist && webpack-dev-server -r config/webpack/client/register-ts.js --config config/webpack/client/webpack.config.ts",
         "env": {
             "NODE_ENV": "development",
             "DEBUG": "app:*"
@@ -17,7 +17,7 @@
     },
     {
         "name": "server-compile",
-        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/webpack.config.babel.js",
+        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/webpack.config.ts",
         "env": {
             "NODE_ENV": "development"
         }
@@ -43,14 +43,14 @@
     },
     {
         "name": "server-build",
-        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/webpack.config.prod.babel.js",
+        "command": "webpack -r config/webpack/client/register-ts.js --config ./config/webpack/server/prod.webpack.config.ts",
         "env": {
             "NODE_ENV": "production"
         }
     },
     {
         "name": "client-build",
-        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/client/webpack.config.prod.babel.js",
+        "command": "prun clean && webpack -r config/webpack/client/register-ts.js --config ./config/webpack/client/prod.webpack.config.ts",
         "env": {
             "NODE_ENV": "production"
         }
