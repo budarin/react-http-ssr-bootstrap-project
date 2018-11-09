@@ -35,6 +35,10 @@
     ],
     "author": "Vadim Budarin",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/budarin/react-http-ssr-bootstrap-project.git"
+    },
     "main": "dist/server.js",
     "devDependencies": {
         "@babel/cli": "^7.1.2",
