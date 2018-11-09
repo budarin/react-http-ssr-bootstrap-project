@@ -16,11 +16,21 @@ const server = https.createServer(
     appServer,
 );
 
-const shutdown = (code: number) => {
-    logger.error('Останавливаем сервер ...');
+let shootdowning = false;
+const shutdown = () => {
+    if (shootdowning) {
+        return;
+    }
 
+    shootdowning = true;
     server.close();
-    process.exit(code || 0);
+    setTimeout(() => {
+        if (__DEV__) {
+            // tslint:disable-next-line
+            console.log('Closing...');
+        }
+        process.exit(1);
+    }, 1000);
 };
 
 // @ts-ignore
@@ -34,7 +44,7 @@ process.on('unhandledRejection', err => {
 
 process.on('uncaughtException', err => {
     logger.error('Необработанная ошибка приложения', err.stack);
-    shutdown(1);
+    process.exit(1);
 });
 
 server.listen(SERVER_PORT, SERVER_HOST);

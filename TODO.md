@@ -1,3 +1,4 @@
+-   gracefullSutdown
 -   генерация отдельного source.map с нормальными исходниками и открытием в браузере
 -   copy plugin не сохраняет оригинальные имена в assets-manifest
 -   splash вставить как html со стилем display:none и только по таймеру делать display:block ?
