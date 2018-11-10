@@ -1,4 +1,6 @@
 :root {
+    --golden-ration: 1.618;
+
     position: relative;
     min-height: 100vh;
     color: brown;
