@@ -1,5 +1,5 @@
 :root {
-    --golden-ration: 1.618;
+    --golden-ration: 1.5; /* 1.618; */
 
     position: relative;
     min-height: 100vh;
@@ -7,7 +7,7 @@
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 26px; /* 16 × 1.618 = 25.888 */
+    line-height: 24px; /* 16 × 1.618 = 25.888 */
     scroll-behavior: smooth;
     overflow-y: auto;
     overscroll-behavior-y: contain;
