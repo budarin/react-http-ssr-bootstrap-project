@@ -2,9 +2,10 @@
     position: relative;
     min-height: 100vh;
     color: brown;
-    font-size: 20px;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 26px; /* 16 × 1.618 = 25.888 */
     scroll-behavior: smooth;
     overflow-y: auto;
     overscroll-behavior-y: contain;
