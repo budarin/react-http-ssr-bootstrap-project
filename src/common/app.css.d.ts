@@ -1,9 +1,7 @@
-export interface IStyles {
-    readonly hello: string;
-}
-
 export interface IAppCss {
-    readonly locals: IStyles;
+    readonly locals: {
+        readonly hello: string;
+    };
     readonly use: Function;
     readonly unuse: Function;
     readonly source: string;
