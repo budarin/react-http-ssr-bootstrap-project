@@ -19,7 +19,6 @@ module.exports = {
                             ? ['last 1 Chrome versions']
                             : 'last 1 version, ' + browserslist, // @babel/preset-env has own list of browsers other than others
                 },
-                exclude: ['transform-async-to-generator', 'transform-regenerator'],
             },
         ],
         '@babel/preset-react',
@@ -27,7 +26,6 @@ module.exports = {
     ],
     plugins: [
         'preval',
-        ['module:fast-async', { spec: true }],
         'react-hot-loader/babel',
         '@babel/plugin-syntax-dynamic-import',
         '@babel/plugin-proposal-class-properties',
