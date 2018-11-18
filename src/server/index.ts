@@ -2,7 +2,7 @@ import fs from 'fs';
 import https from 'https';
 import logger from './utils/getServerLogger';
 
-import env from '../utils/getEnv';
+import env from '../../config';
 import appServer from './appServer';
 
 const { SERVER_PORT, SERVER_HOST, SERVER_URL, KEYS_FOLDER } = env;

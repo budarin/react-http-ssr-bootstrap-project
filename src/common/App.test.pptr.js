@@ -1,4 +1,4 @@
-import env from '../utils/getEnv';
+import env from '../../config';
 
 // its imported only for testing purpose when App.js changed
 import App from './App';

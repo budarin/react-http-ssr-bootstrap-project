@@ -6,7 +6,7 @@ import ManifestPlugin from 'webpack-manifest-plugin';
 import WriteFilePlugin from 'write-file-webpack-plugin';
 import EntrypointsPlugin from '../webpackEntrypointPlugin';
 
-import env from '../../../src/utils/getEnv';
+import env from '../../';
 import babelConfig from './babelLoaderConfig';
 
 const { STATIC_HOST, STATIC_PORT, STATIC_URL } = env;

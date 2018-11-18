@@ -1,4 +1,4 @@
-import env from '../../utils/getEnv';
+import env from '../../../config';
 import getPreLoadingLink from './getPreLoadingLink';
 import assetsManifest from './resources/assetsManifest';
 

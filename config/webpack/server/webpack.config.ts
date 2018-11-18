@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import env from '../../../src/utils/getEnv';
+import env from '../../';
 import babelConfig from './babelLoaderConfig';
 
 const { STATIC_URL } = env;
