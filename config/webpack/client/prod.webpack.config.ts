@@ -119,7 +119,7 @@ const config = {
     },
     plugins: [
         new CopyWebpackPlugin([
-            { from: './.env.production.json' },
+            { from: './.env.production' },
 
             { from: './src/common/robots.txt' },
             { from: './src/common/manifest.json', to: '[hash].[ext]' }, // TODO:
