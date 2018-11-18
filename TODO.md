@@ -4,3 +4,4 @@
 -   splash вставить как html со стилем display:none и только по таймеру делать display:block ?
     или отображать shell приложения таким образом?
 -   заменить создание скриптом splas статикой и стилем display: none
+-   remove loading .env.production from getEnv
