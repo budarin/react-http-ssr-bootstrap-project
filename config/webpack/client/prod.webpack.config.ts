@@ -1,16 +1,13 @@
 import path from 'path';
 import webpack from 'webpack';
+import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeJsPlugin from 'optimize-js-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
-import MinifyPlugin from 'babel-minify-webpack-plugin';
 import EntrypointsPlugin from '../webpackEntrypointPlugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
 import babelConfig from './babelLoaderConfig.js';
-
-// tslint:disable-next-line
-const zopfli = require('@gfx/zopfli');
 
 const config = {
     watch: false,
@@ -30,7 +27,7 @@ const config = {
     },
     optimization: {
         occurrenceOrder: true,
-        minimizer: [new MinifyPlugin(), new OptimizeJsPlugin({ sourceMap: false })],
+        minimizer: [new OptimizeJsPlugin({ sourceMap: false }), new TerserPlugin()],
         runtimeChunk: 'single',
         splitChunks: {
             chunks: 'all',
@@ -153,9 +150,7 @@ const config = {
             filename: '[path].gz[query]',
             test: /\.js(\?.*)?$/i,
             compressionOptions: { level: 9, numiterations: 15 },
-            algorithm(input, compressionOptions, callback) {
-                return zopfli.gzip(input, compressionOptions, callback);
-            },
+            algorithm: 'gzip',
             threshold: 1024,
             minRatio: 0.8,
         }),
