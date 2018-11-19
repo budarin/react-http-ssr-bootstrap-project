@@ -29,5 +29,6 @@
     "workbench.sideBar.location": "left",
     "git.confirmSync": false,
     "eslint.enable": false,
-    "typescript.surveys.enabled": false
+    "typescript.surveys.enabled": false,
+    "editor.snippetSuggestions": "top"
 }
