@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import MinifyPlugin from 'babel-minify-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
 import babelConfig from './babelLoaderConfig';
 
@@ -19,7 +19,7 @@ const config = {
         path: path.resolve('./dist'),
     },
     optimization: {
-        minimizer: [new MinifyPlugin()],
+        minimizer: [new TerserPlugin()],
     },
     module: {
         rules: [
