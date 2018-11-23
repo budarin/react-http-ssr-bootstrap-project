@@ -22,6 +22,7 @@ function renderHTMLHeader(): string {
             <meta name="Description" content="Simple SSR React project.">
             <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width, Downlink">
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no">
+            <meta name="format-detection" content="telephone=no">
 
             <link rel="shortcut icon" href="${(assetsManifest as any)['favicon.ico']}">
             <link rel="manifest" href="${(assetsManifest as any)['manifest.json']}">
