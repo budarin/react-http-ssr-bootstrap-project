@@ -6,3 +6,4 @@
 -   заменить создание скриптом splas статикой и стилем display: none
 -   remove loading .env.production from getEnv
 -   remove tmp foled & from clean command
+-   add docs for tolls congis
