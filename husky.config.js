@@ -1,8 +1,8 @@
 module.exports = {
     hooks: {
-        'prepare-commit-msg': './tools/git/git-commit-message.sh',
+        'prepare-commit-msg': 'prun pre-commit',
         'pre-commit': 'pretty-quick --staged',
-        'pre-push': './tools/git/preventPushToMaster.sh && npm test',
+        'pre-push': 'prun pre-push',
         'post-checkout': 'check-dependencies --install',
         'post-merge': 'check-dependencies --install',
     },

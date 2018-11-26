@@ -136,5 +136,13 @@
     {
         "name": "audit-fix",
         "command": "npm audit fix"
+    },
+    {
+        "name": "pre-commit",
+        "command": "sh ./tools/git/git-commit-message.sh"
+    },
+    {
+        "name": "pre-push",
+        "command": "sh ./tools/git/preventPushToMaster.sh && npm test"
     }
 ]
