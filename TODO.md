@@ -7,3 +7,4 @@
 -   remove loading .env.production from getEnv
 -   remove tmp foled & from clean command
 -   add docs for tolls congis
+-   написать плагин для macro для генерации констант для action в dev/prod envs

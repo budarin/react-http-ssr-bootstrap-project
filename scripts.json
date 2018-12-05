@@ -144,5 +144,9 @@
     {
         "name": "pre-push",
         "command": "sh ./tools/git/preventPushToMaster.sh && npm test"
+    },
+    {
+        "name": "git-remove-deleted-branches",
+        "command": "git fetch -p && for branch in `git branch -vv --no-color | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
     }
 ]
