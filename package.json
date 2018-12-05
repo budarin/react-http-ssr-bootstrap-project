@@ -17,7 +17,8 @@
         "type-check": "prun type-check",
         "clean": "prun clean",
         "audit-fix": "prun audit-fix",
-        "upgrade": "prun upgrade"
+        "upgrade": "prun upgrade",
+        "git-remove-deleted-branches": "prun git-remove-deleted-branches"
     },
     "browserslist": "> 3%, not ie < 13, not dead",
     "keywords": [
