@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "React simple bootstrap",
     "engines": {
-        "node": ">=10.9.0"
+        "node": ">=11.0.0"
     },
     "scripts": {
         "1.client": "prun start-client",
