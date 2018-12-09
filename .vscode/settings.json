@@ -30,5 +30,6 @@
     "git.confirmSync": false,
     "eslint.enable": false,
     "typescript.surveys.enabled": false,
-    "editor.snippetSuggestions": "top"
+    "editor.snippetSuggestions": "top",
+    "files.eol": "\n"
 }
