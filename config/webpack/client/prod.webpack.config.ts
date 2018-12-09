@@ -93,6 +93,7 @@ const config = {
                     {
                         loader: '@budarin/ts-css-loader',
                         options: {
+                            EOL: 'LF',
                             modules: true,
                             browser: true,
                             server: true,
