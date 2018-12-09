@@ -31,5 +31,6 @@
     "eslint.enable": false,
     "typescript.surveys.enabled": false,
     "editor.snippetSuggestions": "top",
+
     "files.eol": "\n"
 }
